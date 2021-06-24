@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+body, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.wrapper1, .wrapper2, .form input, .wrapper3 {
+  font-family: 'Indie Flower', cursive;
+  color: #D88C9A; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  height: 95vh; }
+
+.mainWrapper {
+  height: 80%;
+  min-width: 700px;
+  padding: 20px;
+  background-color: #F1E3D3;
+  border-radius: 20px; }
+
+.wrapper1 {
+  height: 15%; }
+  .wrapper1 h1 {
+    font-size: 60px;
+    color: #D88C9A; }
+
+.wrapper2main {
+  overflow: auto;
+  height: 70%; }
+
+.wrapper2 {
+  justify-content: flex-start;
+  height: 70%;
+  flex-direction: column; }
+
+.form {
+  min-height: 40px;
+  width: 100%;
+  border: 2px solid #99C1B9;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 5px; }
+  .form input {
+    background-color: #F1E3D3;
+    height: 100%;
+    width: 70%;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #D88C9A;
+    padding-left: 20px; }
+    .form input:focus, .form input:hover {
+      outline: none;
+      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5); }
+    .form input::placeholder {
+      color: #D88C9A; }
+  .form .choseDate, .form .add {
+    height: 100%;
+    width: 15%;
+    border-left: 2px solid #99C1B9;
+    outline: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer; }
+    .form .choseDate:hover, .form .add:hover {
+      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5); }
+  .form .choseDate::after {
+    font-family: 'FontAwesome';
+    content: ''; }
+  .form .choseDate i {
+    width: 20px;
+    height: 20px;
+    color: black; }
+
+.taskCard {
+  min-height: 40px;
+  width: 100%;
+  border: 2px solid #99C1B9;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 20px; }
+  .taskCardText, .taskCardDate, .taskCardControls {
+    height: 100%; }
+    .taskCardText:hover, .taskCardDate:hover, .taskCardControls:hover {
+      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+  .taskCardText {
+    border-radius: 10px 0px 0px 10px;
+    width: 55%; }
+  .taskCardDate {
+    width: 20%;
+    border-left: 2px solid #99C1B9;
+    font-size: 20px;
+    font-weight: 700; }
+  .taskCardControls {
+    border-radius: 0px 10px 10px 0px;
+    width: 25%;
+    border-left: 2px solid #99C1B9;
+    font-size: 20px;
+    font-weight: 700; }
+
+.wrapper3 {
+  justify-content: space-between;
+  height: 15%; }
+  .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
+    min-width: 30%;
+    min-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 2px solid #99C1B9;
+    border-radius: 10px; }
+    .wrapper3 .clearButton:hover, .wrapper3 .laterButton:hover, .wrapper3 .finishedButton:hover {
+      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+      cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */
