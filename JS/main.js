@@ -4,10 +4,12 @@ let tea = ' and tea.'
 let input = document.querySelector('input');
 let currentCard = document.querySelectorAll('.taskCard');
 let clearCards = document.querySelector('.clearButton');
+let laterButton = document.querySelector('.laterButton');
+let laterWindow = document.querySelector('.laterWindow');
+let finishedButton = document.querySelector('.finishedButton');
+let finishedWindow = document.querySelector('.finishedWindow');
 
-
-
-function  myFunction() {
+function  addTask() {
     let task = document.createElement('div');
     task.classList.add('taskCard');
     // document.querySelector('.wrapper2').appendChild(task);
@@ -19,6 +21,8 @@ function  myFunction() {
       </div>`);
     currentCard = document.querySelectorAll('.taskCard')
     console.log(input.value)
+    input.value = '';
+    input.focus();
 }
 
 
@@ -28,8 +32,23 @@ function clear() {
     })
 }
 
-add.addEventListener('click', myFunction);
+add.addEventListener('click', () => {
+    if (input.value !== '') addTask()
+});
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' && input.value !== '') addTask();
+});
+
 clearCards.addEventListener('click', clear);
+
+laterButton.addEventListener('click', function() {
+    laterWindow.style.height = '100%';
+})
+
+finishedButton.addEventListener('click', function() {
+    finishedWindow.style.height = '100%';
+})
 
 
 
