@@ -1,6 +1,5 @@
 let add = document.querySelector('.add');
 let form = document.querySelector('.form');
-let tea = ' and tea.'
 let input = document.querySelector('input');
 let currentCard = document.querySelectorAll('.taskCard');
 let clearCards = document.querySelector('.clearButton');
@@ -10,6 +9,7 @@ let finishedButton = document.querySelector('.finishedButton');
 let finishedWindow = document.querySelector('.finishedWindow');
 
 function  addTask() {
+    let tea = ' and tea.'
     let task = document.createElement('div');
     task.classList.add('taskCard');
     // document.querySelector('.wrapper2').appendChild(task);
@@ -17,22 +17,35 @@ function  addTask() {
     document.querySelector('.wrapper2').insertAdjacentHTML('beforeend', `<div class="taskCard">
         <div class="taskCardText">${tea}</div>
         <div class="taskCardDate">Today</div>
-        <div class="taskCardControls"></div>
+        <div class="taskCardControls">
+                        <div class="taskCardControlsFinished">
+                            <i title = 'done' class="far fa-check-circle"></i>
+                        </div>
+                        <div class="taskCardControlsLater">
+                            <i title = 'later' class="fas fa-hourglass-start"></i>
+                        </div>
+                        <div class="taskCardControlsClose">
+                            <i title = 'close' class="fas fa-times"></i>
+                        </div>
+         </div>
       </div>`);
     currentCard = document.querySelectorAll('.taskCard')
     console.log(input.value)
     input.value = '';
     input.focus();
+    controlElements();
+
 }
 
 
 function clear() {
     currentCard.forEach( (item) => {
         item.style.display = 'none';
+        input.focus();
     })
 }
 
-add.addEventListener('click', () => {
+document.querySelector('.add').addEventListener('click', () => {
     if (input.value !== '') addTask()
 });
 
@@ -50,5 +63,24 @@ finishedButton.addEventListener('click', function() {
     finishedWindow.style.height = '100%';
 })
 
+function controlElements() {
+    // let icon = document.querySelectorAll('i')
+    // icon.forEach( function(item) {
+    //     item.addEventListener('click', function(event) {
+    //         event.target.style.color = 'red';
+    //     })
+    // })
 
+    let buttonClose = document.querySelectorAll('.taskCardControlsClose')
+        buttonClose.forEach( function(item){
+            item.addEventListener('click', function(event) {
+                event.target.style.color = 'yellow';
+                event.target.parentNode.parentNode.style.display = 'none';
 
+                // alert(event.target.parentNode.className);
+
+            })
+    })
+}
+
+controlElements()

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-body, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
+body, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .taskCardControlsFinished, .taskCardControlsLater, .taskCardControlsClose, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -117,6 +117,21 @@ body {
     border-left: 2px solid #99C1B9;
     font-size: 20px;
     font-weight: 700; }
+    .taskCardControlsFinished, .taskCardControlsLater {
+      width: 33%;
+      height: 100%;
+      border-right: 2px solid #99C1B9;
+      cursor: pointer; }
+      .taskCardControlsFinished:hover, .taskCardControlsLater:hover {
+        color: #8E7DBE;
+        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+    .taskCardControlsClose {
+      width: 33%;
+      height: 100%;
+      cursor: pointer; }
+      .taskCardControlsClose:hover {
+        color: #8E7DBE;
+        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
 
 .wrapper3 {
   justify-content: space-between;

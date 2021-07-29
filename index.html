@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Styles/SCSS/main.css"/>
     <title>Title</title>
+    <script src="https://kit.fontawesome.com/0e806118ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="mainWrapper">
@@ -25,18 +26,20 @@
                 <div class="taskCard">
                     <div class="taskCardText">To make a cofee</div>
                     <div class="taskCardDate">Today</div>
-                    <div class="taskCardControls"></div>
+                    <div class="taskCardControls">
+                        <div class="taskCardControlsFinished">
+                            <i title = 'done' class="far fa-check-circle"></i>
+                        </div>
+                        <div class="taskCardControlsLater">
+                            <i title = 'later' class="fas fa-hourglass-start"></i>
+                        </div>
+                        <div class="taskCardControlsClose">
+                            <i title = 'close' class="fas fa-times"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="taskCard">
-                    <div class="taskCardText">To make a cofee</div>
-                    <div class="taskCardDate">Today</div>
-                    <div class="taskCardControls"></div>
-                </div>
-                <div class="taskCard">
-                    <div class="taskCardText">To make a cofee</div>
-                    <div class="taskCardDate">Today</div>
-                    <div class="taskCardControls"></div>
-                </div>
+
+
             </div>
         </div>
         <div class="wrapper3">
@@ -64,6 +67,7 @@
 
 
 
-<script src="JS/main.js"></script>
+    <script src="JS/main.js"></script>
+
 </body>
 </html>
