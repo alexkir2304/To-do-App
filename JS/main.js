@@ -19,13 +19,13 @@ function  addTask() {
         <div class="taskCardDate">Today</div>
         <div class="taskCardControls">
                         <div class="taskCardControlsFinished">
-                            <i title = 'done' class="far fa-check-circle"></i>
+                            <i title = 'done' class="far fa-check-circle test"></i>
                         </div>
                         <div class="taskCardControlsLater">
-                            <i title = 'later' class="fas fa-hourglass-start"></i>
+                            <i title = 'later' class="fas fa-hourglass-start test"></i>
                         </div>
                         <div class="taskCardControlsClose">
-                            <i title = 'close' class="fas fa-times"></i>
+                            <i title = 'close' class="fas fa-times test"></i>
                         </div>
          </div>
       </div>`);
@@ -74,11 +74,23 @@ function controlElements() {
     let buttonClose = document.querySelectorAll('.taskCardControlsClose')
         buttonClose.forEach( function(item){
             item.addEventListener('click', function(event) {
-                event.target.style.color = 'yellow';
+                // event.stopPropagation();
+
+
                 event.target.parentNode.parentNode.style.display = 'none';
 
                 // alert(event.target.parentNode.className);
 
+            }, {capture: false});
+
+
+            let icon = document.querySelectorAll('i')
+            icon.forEach( function(item) {
+                item.addEventListener('click', function(event) {
+                    event.target.parentNode.parentNode.parentNode.style.display = 'none';
+                    event.stopPropagation();
+
+                })
             })
     })
 }
