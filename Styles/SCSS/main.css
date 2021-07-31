@@ -116,7 +116,8 @@ body {
     width: 25%;
     border-left: 2px solid #99C1B9;
     font-size: 20px;
-    font-weight: 700; }
+    font-weight: 700;
+    transition: all 0.5s ease-out; }
     .taskCardControlsFinished, .taskCardControlsLater {
       width: 33%;
       height: 100%;
@@ -125,13 +126,19 @@ body {
       .taskCardControlsFinished:hover, .taskCardControlsLater:hover {
         color: #8E7DBE;
         box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
-    .taskCardControlsClose {
+    .taskCardControlsClose, .taskCardControlsLater {
       width: 33%;
       height: 100%;
       cursor: pointer; }
-      .taskCardControlsClose:hover {
+      .taskCardControlsClose:hover, .taskCardControlsLater:hover {
         color: #8E7DBE;
         box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+        .taskCardControlsClose:hover i, .taskCardControlsLater:hover i {
+          transition: all 0.5s ease-out;
+          transform: rotate(180deg); }
+    .taskCardControlsFinished:hover i {
+      transition: all 0.5s ease-out;
+      transform: scale(1.5); }
 
 .wrapper3 {
   justify-content: space-between;

@@ -84,13 +84,20 @@ function controlElements() {
             }, {capture: false});
 
 
-            let icon = document.querySelectorAll('i')
-            icon.forEach( function(item) {
+            let iconClose = document.querySelectorAll('.fa-times')
+            iconClose.forEach( function(item) {
+
                 item.addEventListener('click', function(event) {
-                    event.target.parentNode.parentNode.parentNode.style.display = 'none';
+
+                        event.target.parentNode.parentNode.parentNode.style.display = 'none';
+
+
+                    // alert(event.target.classList)
                     event.stopPropagation();
 
+
                 })
+
             })
     })
 }
