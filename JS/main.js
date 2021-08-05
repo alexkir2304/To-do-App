@@ -21,8 +21,8 @@ function  addTask() {
                         <div class="taskCardControlsFinished" onclick="controlFinishedElements2(this)">
                             <i title = 'done' class="far fa-check-circle test" ></i>
                         </div>
-                        <div class="taskCardControlsLater">
-                            <i title = 'later' class="fas fa-hourglass-start test"></i>
+                        <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
+                            <i title = 'later' class="fas fa-hourglass-start test" ></i>
                         </div>
                         <div class="taskCardControlsClose">
                             <i title = 'close' class="fas fa-times test"></i>
@@ -57,6 +57,9 @@ document.addEventListener('keydown', function (event) {
 clearCards.addEventListener('click', clear);
 
 laterButton.addEventListener('click', function() {
+
+
+
     laterWindow.style.height = '100%';
 })
 
@@ -64,6 +67,17 @@ finishedButton.addEventListener('click', function() {
     // finishedWindow.style.transform = 'scaleY(1)';
     finishedWindow.style.height = '100%';
 })
+
+document.querySelector('.laterWindowClose').addEventListener('click', function() {
+    // laterWindow.style.display = 'none'
+    laterWindow.style.height = '0%';
+})
+
+document.querySelector('.finishedWindowClose').addEventListener('click', function() {
+    // laterWindow.style.display = 'none'
+    finishedWindow.style.height = '0%';
+})
+
 
 function controlCloselElements() {
     // let icon = document.querySelectorAll('i')
@@ -114,6 +128,20 @@ function controlFinishedElements2(a) {
     a.parentNode.parentNode.remove();
     finishedContainer.append(copiedTask);
 }
+
+
+controlFinishedElements2()
+
+
+function controlLaterElements2(a) {
+
+    let laterContainer = document.querySelector('.laterTasks')
+    let copiedTask = a.parentNode.parentNode.cloneNode(true);
+    a.parentNode.parentNode.remove();
+    laterContainer.append(copiedTask);
+}
+
+controlLaterElements2(a)
 
 //test
 
@@ -182,5 +210,5 @@ function controlFinishedElements2(a) {
 //
 // }
 
-controlFinishedElements2()
+
 
