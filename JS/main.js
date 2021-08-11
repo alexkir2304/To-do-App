@@ -9,7 +9,7 @@ let finishedButton = document.querySelector('.finishedButton');
 let finishedWindow = document.querySelector('.finishedWindow');
 
 function  addTask() {
-    let tea = ' and tea.'
+    let tea =' and tea.'
     // let task = document.createElement('div');
     // task.classList.add('taskCard');
     // // document.querySelector('.wrapper2').appendChild(task);
@@ -130,7 +130,7 @@ function controlFinishedElements2(a) {
 }
 
 
-controlFinishedElements2()
+
 
 
 function controlLaterElements2(a) {
@@ -141,7 +141,7 @@ function controlLaterElements2(a) {
     laterContainer.append(copiedTask);
 }
 
-controlLaterElements2(a)
+
 
 //test
 

@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 :root {
-  --mainTransition: 0.5s ease; }
+  --mainTransition: 0.5s ease;
+  --color1: #14213d;
+  --color2: #e5e5e5;
+  --color3: #000000;
+  --color4: #fca311; }
 
 body, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks, .mainWrapper .laterWindow .laterBtn, .mainWrapper .laterWindow .finishedBtn, .mainWrapper .finishedWindow .laterBtn, .mainWrapper .finishedWindow .finishedBtn, .mainWrapper .laterWindow .laterBtn .laterWindowClose, .mainWrapper .laterWindow .laterBtn .finishedWindowClose, .mainWrapper .laterWindow .finishedBtn .laterWindowClose, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose, .mainWrapper .finishedWindow .laterBtn .laterWindowClose, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .taskCardControlsFinished, .taskCardControlsLater, .taskCardControlsClose, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
   display: flex;
@@ -9,20 +13,21 @@ body, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .later
 
 .mainWrapper .laterWindow, .mainWrapper .finishedWindow, .mainWrapper .laterWindow h1, .mainWrapper .finishedWindow h1, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks, .wrapper1, .wrapper2, .form input, .wrapper3 {
   font-family: 'Indie Flower', cursive;
-  color: #D88C9A; }
+  color: var(--color1); }
 
 * {
   box-sizing: border-box; }
 
 body {
-  height: 95vh; }
+  height: 100vh;
+  margin: 0; }
 
 .mainWrapper {
   position: relative;
   height: 80%;
   min-width: 700px;
   padding: 20px;
-  background-color: #F1E3D3;
+  background-color: var(--color2);
   border-radius: 20px; }
   .mainWrapper .laterWindow, .mainWrapper .finishedWindow {
     box-sizing: border-box;
@@ -31,8 +36,8 @@ body {
     left: 0;
     width: 100%;
     padding: 0 20px;
-    height: 0%;
-    background-color: #F1E3D3;
+    height: 0;
+    background-color: var(--color2);
     border-radius: 20px;
     transition: height var(--mainTransition), display 0.1s ease;
     overflow: hidden; }
@@ -40,7 +45,7 @@ body {
       height: 15%;
       font-size: 60px;
       text-align: center;
-      color: #D88C9A;
+      color: var(--color1);
       margin: 0; }
     .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks {
       justify-content: flex-start;
@@ -53,22 +58,24 @@ body {
         min-height: 40px;
         font-size: 20px;
         font-weight: 700;
-        border: 2px solid #99C1B9;
+        border: 2px solid var(--color3);
         border-radius: 10px;
         margin-bottom: 20px; }
         .mainWrapper .laterWindow .laterBtn .laterWindowClose:hover, .mainWrapper .laterWindow .laterBtn .finishedWindowClose:hover, .mainWrapper .laterWindow .finishedBtn .laterWindowClose:hover, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose:hover, .mainWrapper .finishedWindow .laterBtn .laterWindowClose:hover, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose:hover, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose:hover, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose:hover {
-          box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+          box-shadow: 0 0 5px 4px var(--color4);
           cursor: pointer; }
 
 .wrapper1 {
   height: 15%; }
   .wrapper1 h1 {
     font-size: 60px;
-    color: #D88C9A; }
+    color: var(--color1); }
 
 .wrapper2main {
   overflow: auto;
-  height: 70%; }
+  height: 70%;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .wrapper2 {
   justify-content: flex-start;
@@ -78,37 +85,42 @@ body {
 .form {
   min-height: 40px;
   width: 100%;
-  border: 2px solid #99C1B9;
+  border: 2px solid var(--color3);
   border-radius: 10px;
   margin-bottom: 40px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  transition: all var(--mainTransition); }
   .form input {
-    background-color: #F1E3D3;
+    background-color: var(--color2);
     height: 100%;
     width: 70%;
     border: none;
     border-radius: 10px 0 0 10px;
     box-sizing: border-box;
     font-size: 20px;
-    color: #D88C9A;
-    padding-left: 20px; }
+    color: var(--color1);
+    padding-left: 20px;
+    transition: all var(--mainTransition); }
     .form input:focus, .form input:hover {
       outline: none;
-      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5); }
+      box-shadow: 0 0 5px 4px var(--color4); }
     .form input::placeholder {
-      color: #D88C9A; }
+      color: var(--color1); }
   .form .choseDate, .form .add {
     height: 100%;
     width: 15%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     outline: none;
     font-size: 20px;
     font-weight: 700;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all var(--mainTransition); }
     .form .choseDate:hover, .form .add:hover {
-      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5); }
+      box-shadow: 0 0 5px 4px var(--color4); }
+  .form .add {
+    border-radius: 0 10px 10px 0; }
   .form .choseDate::after {
-    font-family: 'FontAwesome';
+    font-family: 'FontAwesome', Serif;
     content: ''; }
   .form .choseDate i {
     width: 20px;
@@ -118,7 +130,7 @@ body {
 .taskCard {
   min-height: 40px;
   width: 100%;
-  border: 2px solid #99C1B9;
+  border: 2px solid var(--color3);
   border-radius: 10px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -127,40 +139,42 @@ body {
     height: 100%;
     transition: all var(--mainTransition); }
     .taskCardText:hover, .taskCardDate:hover, .taskCardControls:hover {
-      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+      box-shadow: 0 0 5px 4px var(--color4); }
   .taskCardText {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0 0 10px;
     width: 55%; }
   .taskCardDate {
     width: 20%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     font-size: 20px;
     font-weight: 700; }
   .taskCardControls {
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0 10px 10px 0;
     width: 25%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     font-size: 20px;
     font-weight: 700;
     transition: all var(--mainTransition); }
     .taskCardControlsFinished, .taskCardControlsLater {
       width: 33%;
       height: 100%;
-      border-right: 2px solid #99C1B9;
+      border-right: 2px solid var(--color3);
       cursor: pointer; }
       .taskCardControlsFinished:hover, .taskCardControlsLater:hover {
-        color: #8E7DBE;
-        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+        color: var(--color4);
+        box-shadow: 0 0 5px 4px var(--color4); }
     .taskCardControlsClose, .taskCardControlsLater {
       width: 33%;
       height: 100%;
       cursor: pointer; }
       .taskCardControlsClose:hover, .taskCardControlsLater:hover {
-        color: #8E7DBE;
-        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5); }
+        color: var(--color4);
+        box-shadow: 0 0 5px 4px var(--color4); }
         .taskCardControlsClose:hover i, .taskCardControlsLater:hover i {
           transition: all var(--mainTransition);
           transform: rotate(180deg); }
+    .taskCardControlsClose {
+      border-radius: 0 10px 10px 0; }
     .taskCardControlsFinished:hover i {
       transition: all var(--mainTransition);
       transform: scale(1.5); }
@@ -173,10 +187,10 @@ body {
     min-height: 40px;
     font-size: 20px;
     font-weight: 700;
-    border: 2px solid #99C1B9;
+    border: 2px solid var(--color3);
     border-radius: 10px; }
     .wrapper3 .clearButton:hover, .wrapper3 .laterButton:hover, .wrapper3 .finishedButton:hover {
-      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+      box-shadow: 0 0 5px 4px var(--color4);
       cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

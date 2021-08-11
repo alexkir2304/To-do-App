@@ -1,5 +1,9 @@
 :root {
   --mainTransition: 0.5s ease;
+  --color1: #14213d;     //text
+  --color2: #e5e5e5;     //background
+  --color3: #000000;     //border
+  --color4:  #fca311;    //shadow
 }
 
 %centerItems {
@@ -10,7 +14,7 @@
 
 %googlefont {
   font-family: 'Indie Flower', cursive;
-  color: #D88C9A;
+  color: var(--color1);
 }
 
 // google font
@@ -22,10 +26,10 @@
 }
 
 body {
-  height: 95vh;
+  height: 100vh;
+  margin: 0;
   //border: 3px solid black;
   @extend %centerItems;
-
 }
 
 .mainWrapper {
@@ -34,7 +38,7 @@ body {
   min-width: 700px;
   padding: 20px;
   // border: 1px solid black;
-  background-color: #F1E3D3;
+  background-color: var(--color2);
   border-radius: 20px;
   // overflow: auto;
   .laterWindow, .finishedWindow {
@@ -48,12 +52,12 @@ body {
     left: 0;
     width: 100%;
     padding: 0 20px;
-    height: 0%;
+    height: 0;
     //transform: scaleY(0);
     @extend %googlefont;
     //@extend %centerItems;
       //transform: scale(0);
-    background-color: #F1E3D3;
+    background-color: var(--color2);
     border-radius: 20px;
     //border: 1px solid red;
     transition: height var(--mainTransition), display 0.1s ease;
@@ -65,7 +69,7 @@ body {
       height: 15%;
       font-size: 60px;
       text-align: center;
-      color: #D88C9A;
+      color: var(--color1);
       margin: 0;
 
     }
@@ -91,11 +95,11 @@ body {
           min-height: 40px;
           font-size: 20px;
           font-weight: 700;
-          border: 2px solid #99C1B9;
+          border: 2px solid var(--color3);
           border-radius: 10px;
           margin-bottom: 20px;
           &:hover{
-            box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+            box-shadow: 0 0 5px 4px var(--color4);
             cursor: pointer;
 
           }
@@ -103,19 +107,6 @@ body {
 
 
 
-        //@extend %centerItems;
-        //min-width: 30%;
-        //min-height: 40px;
-        //font-size: 20px;
-        //font-weight: 700;
-        //border: 2px solid #99C1B9;
-        //border-radius: 10px;
-        //margin-bottom: 20px;
-        //&:hover{
-        //  box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
-        //  cursor: pointer;
-        //
-        //}
       }
 
 
@@ -130,7 +121,7 @@ body {
   // border: 1px solid black;
   h1 {
     font-size: 60px;
-    color: #D88C9A
+    color: var(--color1)
   }
 }
 
@@ -138,7 +129,25 @@ body {
 .wrapper2main {
   overflow: auto;
   height: 70%;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
 }
+
+//.wrapper2main::-webkit-scrollbar {
+//  width: 10px;
+//}
+//
+//.wrapper2main::-webkit-scrollbar-track {
+//  background-color: #e4e4e4;
+//  border-radius: 100px;
+//}
+
+
+
+
+
 
 .wrapper2 {
   @extend %centerItems;
@@ -153,14 +162,15 @@ body {
   @extend %centerItems;
   min-height: 40px;
   width: 100%;
-  border: 2px solid #99C1B9;
+  border: 2px solid var(--color3);
   border-radius: 10px;
   margin-bottom: 40px;
   margin-top: 5px;
+  transition: all var(--mainTransition);
   //overflow: visible;
 
   input {
-    background-color: #F1E3D3;
+    background-color: var(--color2);
     height: 100%;
     width: 70%;
     border: none;
@@ -168,36 +178,42 @@ body {
     box-sizing: border-box;
     @extend %googlefont;
     font-size: 20px;
-    color: #D88C9A;
+    color: var(--color1);
     padding-left: 20px;
+    transition: all var(--mainTransition);
 
     &:focus, &:hover  {
       // border: ;
       outline: none;
-      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5);
+      box-shadow: 0 0 5px 4px var(--color4);
     }
     &::placeholder {
-      color: #D88C9A;
+      color: var(--color1);
     }
   }
   .choseDate, .add {
     @extend %centerItems;
     height: 100%;
     width: 15%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     outline: none;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+    transition: all var(--mainTransition);
     &:hover {
-      box-shadow: 0 0 5px 4px rgba(142, 125, 190, 0.5);
+      box-shadow: 0 0 5px 4px var(--color4);
     }
 
   }
 
+  .add {
+    border-radius: 0 10px 10px 0;
+  }
+
   .choseDate{
     &::after {
-      font-family: 'FontAwesome';
+      font-family: 'FontAwesome', Serif;
       content: '';
     }
 
@@ -212,7 +228,7 @@ body {
   @extend %centerItems;
   min-height: 40px;
   width: 100%;
-  border: 2px solid #99C1B9;
+  border: 2px solid var(--color3);
   border-radius: 10px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -223,7 +239,7 @@ body {
     height: 100%;
     transition: all var(--mainTransition);
     &:hover {
-      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+      box-shadow: 0 0 5px 4px var(--color4);
     }
   }
 
@@ -231,20 +247,20 @@ body {
 
 
   &Text {
-    border-radius:   10px 0px 0px 10px;
+    border-radius:   10px 0 0 10px;
     width: 55%;
   }
   &Date {
     width: 20%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     font-size: 20px;
     font-weight: 700;
   }
   &Controls {
     @extend %centerItems;
-    border-radius:     0px 10px 10px 0px;
+    border-radius:     0 10px 10px 0;
     width: 25%;
-    border-left: 2px solid #99C1B9;
+    border-left: 2px solid var(--color3);
     font-size: 20px;
     font-weight: 700;
     transition: all var(--mainTransition);
@@ -252,11 +268,11 @@ body {
       @extend %centerItems;
       width: 33%;
       height: 100%;
-      border-right:  2px solid #99C1B9;
+      border-right:  2px solid var(--color3);
       cursor: pointer;
       &:hover {
-        color: #8E7DBE;
-        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+        color: var(--color4);
+        box-shadow: 0 0 5px 4px var(--color4);
       }
     }
     &Close, &Later {
@@ -266,14 +282,17 @@ body {
       cursor: pointer;
       //transition: all 0.5s ease-out;
       &:hover {
-        color: #8E7DBE;
-        box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+        color: var(--color4);
+        box-shadow: 0 0 5px 4px var(--color4);
         i {
           transition: all var(--mainTransition);
           transform: rotate(180deg)
         }
       }
 
+    }
+    &Close {
+      border-radius: 0 10px 10px 0;
     }
     &Finished {
       &:hover {
@@ -299,10 +318,10 @@ body {
     min-height: 40px;
     font-size: 20px;
     font-weight: 700;
-    border: 2px solid #99C1B9;
+    border: 2px solid var(--color3);
     border-radius: 10px;
     &:hover{
-      box-shadow: 0px 0px 5px 4px rgba(142, 125, 190, 0.5);
+      box-shadow: 0 0 5px 4px var(--color4);
       cursor: pointer;
     }
 
