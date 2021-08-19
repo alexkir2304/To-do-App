@@ -1,9 +1,9 @@
 :root {
   --mainTransition: 0.5s ease;
-  --color1: #14213d;     //text
-  --color2: #e5e5e5;     //background
-  --color3: #000000;     //border
-  --color4:  #fca311;    //shadow
+  --color1: #540d6e;     //text
+  --color2: #ffeedd;     //background
+  --color3: #b8b8ff;     //border
+  --color4:  #9381ff;    //shadow
 }
 
 %centerItems {
@@ -17,7 +17,7 @@
   color: var(--color1);
 }
 
-// google font
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 

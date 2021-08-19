@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 :root {
   --mainTransition: 0.5s ease;
-  --color1: #14213d;
-  --color2: #e5e5e5;
-  --color3: #000000;
-  --color4: #fca311; }
+  --color1: #540d6e;
+  --color2: #ffeedd;
+  --color3: #b8b8ff;
+  --color4: #9381ff; }
 
 body, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks, .mainWrapper .laterWindow .laterBtn, .mainWrapper .laterWindow .finishedBtn, .mainWrapper .finishedWindow .laterBtn, .mainWrapper .finishedWindow .finishedBtn, .mainWrapper .laterWindow .laterBtn .laterWindowClose, .mainWrapper .laterWindow .laterBtn .finishedWindowClose, .mainWrapper .laterWindow .finishedBtn .laterWindowClose, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose, .mainWrapper .finishedWindow .laterBtn .laterWindowClose, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .taskCardControlsFinished, .taskCardControlsLater, .taskCardControlsClose, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
   display: flex;
