@@ -17,7 +17,10 @@
                 <div class="form">
                     <input type="text" spellcheck="false" placeholder="To make cofee..." autofocus>
                     <div class="choseDate">
-                        Today
+                        <div class="choseDateSelect choseDateSelectMain" onclick="openDropdown(this)">Today <i class="fas fa-arrow-down"></i></div>
+                        <div class="choseDateSelect dropdownOff" onclick="changePeriod(this)">Tomorrow</div>
+                        <div class="choseDateSelect dropdownOff" onclick="changePeriod(this)">Next year</div>
+
                         <!--         <i class="fas fa-arrow-down"></i> -->
                         <!--           <img src="https://drive.google.com/file/d/10Ak9sxPv6xlAMndnpEaKNWevaXHwb0Lf/view?usp=sharing" alt=""> -->
                     </div>
@@ -33,7 +36,7 @@
                         <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
                             <i title = 'later' class="fas fa-hourglass-start"></i>
                         </div>
-                        <div class="taskCardControlsClose">
+                        <div class="taskCardControlsClose" onclick="controlCloseElements2(this)">
                             <i title = 'close' class="fas fa-times test"></i>
                         </div>
                     </div>
@@ -48,7 +51,7 @@
                         <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
                             <i title = 'later' class="fas fa-hourglass-start" ></i>
                         </div>
-                        <div class="taskCardControlsClose">
+                        <div class="taskCardControlsClose" onclick="controlCloseElements2(this)">
                             <i title = 'close' class="fas fa-times test"></i>
                         </div>
                     </div>
@@ -63,7 +66,7 @@
                         <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
                             <i title = 'later' class="fas fa-hourglass-start"></i>
                         </div>
-                        <div class="taskCardControlsClose">
+                        <div class="taskCardControlsClose" onclick="controlCloseElements2(this)">
                             <i title = 'close' class="fas fa-times test"></i>
                         </div>
                     </div>

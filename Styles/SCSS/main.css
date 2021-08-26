@@ -6,7 +6,7 @@
   --color3: #b8b8ff;
   --color4: #9381ff; }
 
-body, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks, .mainWrapper .laterWindow .laterBtn, .mainWrapper .laterWindow .finishedBtn, .mainWrapper .finishedWindow .laterBtn, .mainWrapper .finishedWindow .finishedBtn, .mainWrapper .laterWindow .laterBtn .laterWindowClose, .mainWrapper .laterWindow .laterBtn .finishedWindowClose, .mainWrapper .laterWindow .finishedBtn .laterWindowClose, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose, .mainWrapper .finishedWindow .laterBtn .laterWindowClose, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .taskCardControlsFinished, .taskCardControlsLater, .taskCardControlsClose, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
+body, .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks, .mainWrapper .laterWindow .laterBtn, .mainWrapper .laterWindow .finishedBtn, .mainWrapper .finishedWindow .laterBtn, .mainWrapper .finishedWindow .finishedBtn, .mainWrapper .laterWindow .laterBtn .laterWindowClose, .mainWrapper .laterWindow .laterBtn .finishedWindowClose, .mainWrapper .laterWindow .finishedBtn .laterWindowClose, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose, .mainWrapper .finishedWindow .laterBtn .laterWindowClose, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose, .wrapper1, .wrapper2, .form, .form .choseDate, .form .add, .form .choseDateSelect, .taskCard, .taskCardText, .taskCardDate, .taskCardControls, .taskCardControlsFinished, .taskCardControlsLater, .taskCardControlsClose, .wrapper3, .wrapper3 .clearButton, .wrapper3 .laterButton, .wrapper3 .finishedButton {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -50,7 +50,8 @@ body {
     .mainWrapper .laterWindow .finishedTasks, .mainWrapper .laterWindow .laterTasks, .mainWrapper .finishedWindow .finishedTasks, .mainWrapper .finishedWindow .laterTasks {
       justify-content: flex-start;
       height: 70%;
-      flex-direction: column; }
+      flex-direction: column;
+      overflow: auto; }
     .mainWrapper .laterWindow .laterBtn, .mainWrapper .laterWindow .finishedBtn, .mainWrapper .finishedWindow .laterBtn, .mainWrapper .finishedWindow .finishedBtn {
       height: 15%; }
       .mainWrapper .laterWindow .laterBtn .laterWindowClose, .mainWrapper .laterWindow .laterBtn .finishedWindowClose, .mainWrapper .laterWindow .finishedBtn .laterWindowClose, .mainWrapper .laterWindow .finishedBtn .finishedWindowClose, .mainWrapper .finishedWindow .laterBtn .laterWindowClose, .mainWrapper .finishedWindow .laterBtn .finishedWindowClose, .mainWrapper .finishedWindow .finishedBtn .laterWindowClose, .mainWrapper .finishedWindow .finishedBtn .finishedWindowClose {
@@ -114,18 +115,41 @@ body {
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+    color: var(--color1);
     transition: all var(--mainTransition); }
     .form .choseDate:hover, .form .add:hover {
       box-shadow: 0 0 5px 4px var(--color4); }
   .form .add {
     border-radius: 0 10px 10px 0; }
-  .form .choseDate::after {
-    font-family: 'FontAwesome', Serif;
-    content: ''; }
-  .form .choseDate i {
-    width: 20px;
-    height: 20px;
-    color: black; }
+  .form .choseDate {
+    position: relative; }
+    .form .choseDate::after {
+      font-family: 'FontAwesome', Serif;
+      content: ''; }
+    .form .choseDateSelect {
+      height: 100%;
+      border: solid var(--color3);
+      border-width: 1px 2px 1px 2px;
+      outline: none;
+      background-color: var(--color2);
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 2;
+      transition: all var(--mainTransition);
+      position: absolute;
+      width: 100%; }
+      .form .choseDateSelect:hover {
+        box-shadow: 0 0 5px 4px var(--color4); }
+      .form .choseDateSelect:nth-child(2) {
+        top: 100%; }
+      .form .choseDateSelect:nth-child(3) {
+        top: 200%;
+        border-radius: 0 0 10px 10px; }
+      .form .choseDateSelect i {
+        margin-left: 10px; }
+    .form .choseDate .dropdownOff {
+      display: none; }
 
 .taskCard {
   min-height: 40px;

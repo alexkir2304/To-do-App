@@ -1,5 +1,4 @@
-let add = document.querySelector('.add');
-let form = document.querySelector('.form');
+
 let input = document.querySelector('input');
 let currentCard = document.querySelectorAll('.taskCard');
 let clearCards = document.querySelector('.clearButton');
@@ -7,35 +6,31 @@ let laterButton = document.querySelector('.laterButton');
 let laterWindow = document.querySelector('.laterWindow');
 let finishedButton = document.querySelector('.finishedButton');
 let finishedWindow = document.querySelector('.finishedWindow');
+let when = document.querySelector('.choseDateSelectMain').innerHTML;
 
 function  addTask() {
-    let tea =' and tea.'
-    // let task = document.createElement('div');
-    // task.classList.add('taskCard');
-    // // document.querySelector('.wrapper2').appendChild(task);
-    tea = input.value;
+    let tea = input.value;
+
+
     document.querySelector('.wrapper2').insertAdjacentHTML('beforeend', `<div class="taskCard">
         <div class="taskCardText">${tea}</div>
-        <div class="taskCardDate">Today</div>
+        <div class="taskCardDate">${when}</div>
         <div class="taskCardControls">
-                        <div class="taskCardControlsFinished" onclick="controlFinishedElements2(this)">
-                            <i title = 'done' class="far fa-check-circle test" ></i>
-                        </div>
-                        <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
-                            <i title = 'later' class="fas fa-hourglass-start test" ></i>
-                        </div>
-                        <div class="taskCardControlsClose" onclick="testcontrolCloseElements()">
-                            <i title = 'close' class="fas fa-times test"></i>
-                        </div>
+            <div class="taskCardControlsFinished" onclick="controlFinishedElements2(this)">
+                <i title = 'done' class="far fa-check-circle test" ></i>
+            </div>
+            <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
+                <i title = 'later' class="fas fa-hourglass-start test" ></i>
+            </div>
+            <div class="taskCardControlsClose" onclick="controlCloseElements2(this)">
+                <i title = 'close' class="fas fa-times test"></i>
+            </div>
          </div>
       </div>`);
     currentCard = document.querySelectorAll('.taskCard')
     console.log(input.value)
     input.value = '';
     input.focus();
-    // controlFinishedElements();
-    controlCloselElements(); // да и тут тоже надо разобраться, чтобы функция не вызывалось по миллиону раз.
-
 }
 
 
@@ -64,86 +59,20 @@ laterButton.addEventListener('click', function() {
 })
 
 finishedButton.addEventListener('click', function() {
-    // finishedWindow.style.transform = 'scaleY(1)';
     finishedWindow.style.height = '100%';
 })
 
 document.querySelector('.laterWindowClose').addEventListener('click', function() {
-    // laterWindow.style.display = 'none'
     laterWindow.style.height = '0%';
 })
 
 document.querySelector('.finishedWindowClose').addEventListener('click', function() {
-    // laterWindow.style.display = 'none'
     finishedWindow.style.height = '0%';
 })
 
-
-function controlCloselElements() {
-    // let icon = document.querySelectorAll('i')
-    // icon.forEach( function(item) {
-    //     item.addEventListener('click', function(event) {
-    //         event.target.style.color = 'red';
-    //     })
-    // })
-
-
-    let buttonClose = document.querySelectorAll('.taskCardControlsClose')
-        buttonClose.forEach( function(item){
-            item.addEventListener('click', function(event) {
-                // event.stopPropagation();
-
-
-                event.target.parentNode.parentNode.style.display = 'none';
-
-                // alert(event.target.parentNode.className);
-
-            }, {capture: false});
-
-
-            let iconClose = document.querySelectorAll('.fa-times')
-            iconClose.forEach( function(item) {
-
-                item.addEventListener('click', function(event) {
-
-                        event.target.parentNode.parentNode.parentNode.style.display = 'none';
-
-
-                    // alert(event.target.classList)
-                    event.stopPropagation();
-
-
-                })
-
-            })
-    })
-}
-// controlCloselElements()
-
-
-function testcontrolCloseElements() {
-
-    let card = document.querySelectorAll('.taskCard');
-    card.forEach(function(item) {
-        item.addEventListener('click', function(event) {
-            // event.stopPropagation();
-            if (event.target.classList.contains('taskCardControlsClose') || event.target.classList.contains('fa-times')) {
-                item.remove();
-            }
-        }, true)
-
-
-    // let buttonClose = document.querySelectorAll('.taskCardControlsClose');
-    // buttonClose.forEach(function(item) {
-    //     item.addEventListener('click', function(event) {
-    //
-    //     }, true)
-    })
-}
-
-testcontrolCloseElements()
-
-//test
+    function controlCloseElements2(a) {
+        a.parentNode.parentNode.remove();
+    }
 
 function controlFinishedElements2(a) {
     let finishedContainer = document.querySelector('.finishedTasks')
@@ -151,10 +80,6 @@ function controlFinishedElements2(a) {
     a.parentNode.parentNode.remove();
     finishedContainer.append(copiedTask);
 }
-
-
-
-
 
 function controlLaterElements2(a) {
 
@@ -165,73 +90,25 @@ function controlLaterElements2(a) {
 }
 
 
+function openDropdown(a) {
+    let subling1 = a.nextElementSibling;
+    subling1.classList.toggle('dropdownOff');
+    let subling2 = a.nextElementSibling.nextElementSibling;
+    subling2.classList.toggle('dropdownOff');
+}
 
-//test
+function changePeriod(a) {
 
-// function controlFinishedElements() {
-//
-//
-//
-//
-//     let buttonFinished = document.querySelectorAll('.taskCardControlsFinished')
-//
-//     buttonFinished.forEach(function(item) {
-//
-//         let copyToMove = function(a) {
-//
-//
-//
-//             let finishedContainer = document.querySelector('.finishedTasks')
-//             let copiedTask = a.cloneNode(true);
-//             a.remove();
-//             finishedContainer.append(copiedTask);
-//
-//             // alert(functionCalled)
-//
-//         }
-//
-//         item.addEventListener('click', function(event){
-//
-//
-//
-//             let myParent = event.target.parentNode.parentNode;
-//
-//
-//             alert('hi i am button')
-//             // myParent.style.transform= 'scaleY(1.5)'
-//
-//             //testing
-//             if (event.target.classList.contains('fa-check-circle')) {
-//                 event.stopPropagation();
-//                 myParent = event.target.parentNode.parentNode.parentNode;
-//
-//             }
-//
-//             copyToMove(myParent)
-//
-//         })
-//
-//         // let iconFinished = document.querySelectorAll('.fa-check-circle')
-//         // iconFinished.forEach(function(item){
-//         //
-//         //     item.addEventListener('click', function (event){
-//         //
-//         //
-//         //
-//         //         event.stopPropagation();
-//         //
-//         //         let myParent = event.target.parentNode.parentNode.parentNode
-//         //         copyToMove(myParent)
-//         //
-//         //         alert('hi i am icon')
-//         //         // myParent.style.transform= 'scaleY(1.5)';
-//         //
-//         //
-//         //     })
-//         // })
-//     })
-//
-// }
+    a.parentElement.firstElementChild.innerHTML = a.innerText;
+    when = a.innerHTML;
+
+    let periods = document.querySelectorAll('.choseDateSelect');
+    periods[1].classList.add('dropdownOff');
+    periods[2].classList.add('dropdownOff');
+
+}
+
+
 
 
 
