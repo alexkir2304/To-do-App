@@ -24,7 +24,7 @@ function  addTask() {
                         <div class="taskCardControlsLater" onclick="controlLaterElements2(this)">
                             <i title = 'later' class="fas fa-hourglass-start test" ></i>
                         </div>
-                        <div class="taskCardControlsClose">
+                        <div class="taskCardControlsClose" onclick="testcontrolCloseElements()">
                             <i title = 'close' class="fas fa-times test"></i>
                         </div>
          </div>
@@ -118,7 +118,30 @@ function controlCloselElements() {
             })
     })
 }
-controlCloselElements()
+// controlCloselElements()
+
+
+function testcontrolCloseElements() {
+
+    let card = document.querySelectorAll('.taskCard');
+    card.forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            // event.stopPropagation();
+            if (event.target.classList.contains('taskCardControlsClose') || event.target.classList.contains('fa-times')) {
+                item.remove();
+            }
+        }, true)
+
+
+    // let buttonClose = document.querySelectorAll('.taskCardControlsClose');
+    // buttonClose.forEach(function(item) {
+    //     item.addEventListener('click', function(event) {
+    //
+    //     }, true)
+    })
+}
+
+testcontrolCloseElements()
 
 //test
 
