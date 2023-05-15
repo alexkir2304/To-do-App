@@ -1,4 +1,3 @@
-
 let input = document.querySelector('input');
 let currentCard = document.querySelectorAll('.taskCard');
 let clearCards = document.querySelector('.clearButton');
@@ -10,7 +9,6 @@ let when = document.querySelector('.choseDateSelectMain').innerHTML;
 
 function  addTask() {
     let tea = input.value;
-
 
     document.querySelector('.wrapper2').insertAdjacentHTML('beforeend', `<div class="taskCard">
         <div class="taskCardText">${tea}</div>
@@ -32,15 +30,12 @@ function  addTask() {
     input.value = '';
     input.focus();
 }
-
-
 function clear() {
     currentCard.forEach( (item) => {
         item.style.display = 'none';
         input.focus();
     })
 }
-
 document.querySelector('.add').addEventListener('click', () => {
     if (input.value !== '') addTask()
 });
@@ -52,12 +47,8 @@ document.addEventListener('keydown', function (event) {
 clearCards.addEventListener('click', clear);
 
 laterButton.addEventListener('click', function() {
-
-
-
     laterWindow.style.height = '100%';
 })
-
 finishedButton.addEventListener('click', function() {
     finishedWindow.style.height = '100%';
 })
@@ -98,17 +89,15 @@ function openDropdown(a) {
 }
 
 function changePeriod(a) {
-
     a.parentElement.firstElementChild.innerHTML = a.innerText;
     when = a.innerHTML;
 
     let periods = document.querySelectorAll('.choseDateSelect');
     periods[1].classList.add('dropdownOff');
     periods[2].classList.add('dropdownOff');
-
 }
 
 
 
-
+//test
 
